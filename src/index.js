@@ -1,13 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './assets/main.css';
 import App from './App';
+import Room from './Room';
 import reportWebVitals from './reportWebVitals';
+import {
+  BrowserRouter,
+  Switch,
+  Route,
+  Link,
+  useParams
+} from "react-router-dom";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <BrowserRouter>
+        <Switch>
+            <Route exact path="/">
+                <App />
+            </Route>
+            <Route exact path="/room/:roomID" >
+                <Room />
+            </Route>
+        </Switch>
+    </BrowserRouter>,
   document.getElementById('root')
 );
 
